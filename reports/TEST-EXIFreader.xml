@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuites>
-<testsuite name="EXIF reader" errors="0" tests="1" failures="0" time="0.013" timestamp="2014-08-28T22:07:46">
-  <testcase classname="EXIF reader" name="should return proper created date" time="0.013"></testcase>
-</testsuite>
-</testsuites>
