@@ -2,6 +2,8 @@ describe("Photo organizer", function() {
 
   var PhotoOrganizer = require('../lib/photo-organizer.js');
   var Q = require('q');
+  Q.longStackSupport = true;
+
   var _ = require('lodash');
   var moment = require('moment');
   var MockFs = require("q-io/fs-mock");
@@ -40,7 +42,7 @@ describe("Photo organizer", function() {
   });
 
   it('organizes all photo files into month directories', function (done) {
-    var organizer = new PhotoOrganizer(mockFs, exifReaderFake);
+    var organizer = new PhotoOrganizer(mockFs, exifReaderFake, 'a/b', 'target');
 
     var same = function (x) { return x; };
     var files = _.sortBy(_.keys(testDates), same);
@@ -53,7 +55,7 @@ describe("Photo organizer", function() {
 
     var monthDirNames = _.zipObject(files, dirNames);
 
-    organizer.organize('a/b', 'target')
+    organizer.organize()
     .then(function () {
       _.each(files, function (file, i) {
         var fname = mockFs.base(file);
