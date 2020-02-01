@@ -1,12 +1,5 @@
 #!/usr/bin/env node
 
-var cli = require('cli'),
-    Monphoto = require('../lib/monphoto');
-
-cli.parse();
-
-cli.main(function (args, options) {
-
-  new Monphoto(args).run().done();
-
-});
+const { Monphoto } = require('../lib/monphoto');
+const args = process.argv.slice(2);
+new Monphoto(args[0], args[1]).run();

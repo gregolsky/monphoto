@@ -1,8 +1,8 @@
 {
   "name": "monphoto",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Scatter image files into month-based folder basing on the EXIF data.",
-  "repository": "https://github.com/gregorl/monphoto.git",
+  "repository": "https://github.com/gregolsky/monphoto.git",
   "keywords": [
     "jpg",
     "exif",
@@ -10,21 +10,27 @@
     "photos",
     "cli"
   ],
-  "private": "true",
   "bin": {
     "monphoto": "./bin/monphoto"
   },
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint lib/*.js test/*.js bin/*",
+    "fix-lint": "eslint --fix lib/*.js test/*.js bin/*"
+  },
   "author": "Grzegorz Lachowski",
   "dependencies": {
-    "cli": "~0.6.3",
-    "exif": "^0.4.0",
-    "moment": "^2.8.2",
-    "q": "^1.0.1",
-    "q-io": "^1.11.4"
+    "exif": "^0.6.0",
+    "fs-mock": "^1.2.1",
+    "moment": "^2.24.0",
+    "rewire": "^4.0.1"
   },
   "devDependencies": {
-    "lodash": "^2.4.1",
-    "jasmine-node": "~1.14.5"
+    "eslint": "^6.8.0",
+    "lodash.sortby": "^4.7.0",
+    "mocha": "^7.0.1",
+    "mock-fs": "^4.10.4",
+    "semistandard": "^14.2.0"
   },
   "engines": {
     "node": "*"
