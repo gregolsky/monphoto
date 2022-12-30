@@ -28,7 +28,7 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "lodash.sortby": "^4.7.0",
-    "mocha": "^7.0.1",
+    "mocha": "^10.2.0",
     "mock-fs": "^4.10.4",
     "semistandard": "^14.2.0"
   },
